@@ -1,0 +1,21 @@
+version: '2'
+services:
+
+  db:
+    restart: unless-stopped
+    image: postgres
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+  om:
+    restart: unless-stopped
+    build: .
+    ports:
+      - "5080:5080"
+      - "8081:8081"
+    depends_on:
+      - db
+
+volumes:
+  pg-data:
+    driver: local
