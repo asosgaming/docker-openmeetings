@@ -1,9 +1,5 @@
 FROM java:latest
 
-ENV http_proxy='http://test:q+815@prx:8080/'
-ENV https_proxy='http://test:q+815@prx:8080/'
-ENV ftp_proxy='http://test:q+815@prx:8080/'
-
 ENV VERSION 3.1.1
 EXPOSE 5080 1935 8081 8100 8088 8443 5443
 RUN set -ex; \
